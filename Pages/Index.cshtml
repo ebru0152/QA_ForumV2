@@ -1,0 +1,57 @@
+﻿@page 
+@model IndexModel
+@{
+    ViewData["Title"] = "Question";
+}
+<div class="text-lg-center">
+    <h1 class="display-4">Questions?? Ask questions plzz</h1>
+    <div class="row">
+        <div class="col-md-4">
+            <form method="post">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input asp-for="@Model.QuestionInput" , class="form-control">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input asp-for="@Model.QuestionDescription" , class="form-control">
+
+                <label for="@Model.CategoryInput">Choose a category:</label>
+                <select name="CategoryInput" id="@Model.CategoryInput" required>
+
+                    @foreach (var item in Models.Category.Catalog)
+                    {
+                        <option value="@item">@item</option>
+                    }
+                </select>
+                <br><br>
+
+                <div class="form-group">
+                    <input type="submit" value="Enter" class="btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+    <h1 class="display-4">Search</h1>
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-page-handler="Search" method="post">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input asp-for="@Model.SearchInput" , class="form-control">
+                <div class="form-group">
+                    <button class="btn btn-default">SearchTitle</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    @foreach (var item in @Model.repo.GetAllQuestions())
+    {
+        <p>posted @item.PostTime, tag: @item.Category</p>
+        <h1>@item.Title</h1>
+        <p>@item.Description</p>
+        @foreach (var itemu in @item.GetAllComments())
+        {
+            <p>@itemu.Content</p>
+        }
+    }
+</div>
