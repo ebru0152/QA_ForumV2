@@ -11,10 +11,10 @@ namespace QA_ForumV2.Services
     public class JsonQuestionRepository : IQuestionRepository
     {
         //Jeffs jsonfile
-        //string JsonFileName = @"C:\Users\Bruger\Desktop\Q&A_Forum\QA_Test_Json\QA_Test_Json\Data\JsonQuestions.json"; // needs fix
+        string JsonFileName = @"C:\Users\Bruger\Source\Repos\QA_ForumV2\Data\JsonQuestions.json"; // needs fix
 
         //Ebrus jsonfile
-        string JsonFileName = @"C:\Users\ebrub\OneDrive\Dokumenter\GitHub\QA_Forum\QA_Test_Json\QA_Test_Json\Data\JsonQuestions.json";
+        //string JsonFileName = @"C:\Users\ebrub\OneDrive\Dokumenter\GitHub\QA_Forum\QA_Test_Json\QA_Test_Json\Data\JsonQuestions.json";
 
 
         public void AddQuestion(Question q)

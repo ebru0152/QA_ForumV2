@@ -8,6 +8,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using QA_ForumV2.Interfaces;
+using QA_ForumV2.Services;
 
 namespace QA_ForumV2
 {
@@ -24,6 +26,7 @@ namespace QA_ForumV2
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddRazorPages();
+            services.AddTransient<IQuestionRepository, JsonQuestionRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
