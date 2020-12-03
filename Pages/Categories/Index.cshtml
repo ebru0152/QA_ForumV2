@@ -1,0 +1,14 @@
+﻿@page "{category}"
+@model QA_ForumV2.Categories.IndexModel
+@{
+}
+@foreach (var item in Model.CategoryList)
+{
+    <p>posted @item.PostTime, tag: @item.Category</p>
+    <h1>@item.Title</h1>
+    <p>@item.Description</p>
+    @foreach (var itemu in @item.GetAllComments())
+    {
+        <p>@itemu</p>
+    }
+}

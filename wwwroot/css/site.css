@@ -69,3 +69,44 @@ body {
   white-space: nowrap;
   line-height: 60px; /* Vertically center the text there */
 }
+
+/* Category menu styles
+-------------------------------------------------- */
+ul.categoryMenu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 200px;
+    background-color: #f1f1f1;    
+    height: auto;
+    position: fixed;
+    overflow: auto;
+}
+
+li.category a {
+    display: block;
+    color: #000;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+li.category a:hover {
+    background-color: #555;
+    color: white;
+}
+
+.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+ul.categoryMenu {
+    border: 1px solid #555;
+}
+
+li.category {
+    text-align: center;
+    border-bottom: 1px solid #555;
+}
+li.category:last-child {
+    border-bottom: 1px solid #555;
+}

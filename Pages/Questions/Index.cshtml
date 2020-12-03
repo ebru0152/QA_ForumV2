@@ -1,0 +1,26 @@
+﻿@page "{title}"
+@model QA_ForumV2.Pages.Questions.IndexModel
+@{
+}
+
+<p>posted @Model.CurrentQuestion.PostTime, tag: @Model.CurrentQuestion.Category</p>
+<h1>@Model.CurrentQuestion.Title</h1>
+<p>@Model.CurrentQuestion.Description</p>
+@foreach (var item in Model.GetComments())
+{
+    <p>@item.Content</p>
+}
+
+<div class="text-lg-center">
+    <div class="row">
+        <div class="col-md-4">
+            <form method="post">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input asp-for="@Model.Input" , class="form-control">
+                <div class="form-group">
+                    <input type="submit" value="Enter" class="btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - QA_ForumV2</title>
+    <title>@ViewData["Title"] - QA_Test_Json</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
 </head>
@@ -11,7 +11,7 @@
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
-                <a class="navbar-brand" asp-area="" asp-page="/Index">QA_ForumV2</a>
+                <a class="navbar-brand" asp-area="" asp-page="/Index">QA_Test_Json</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -28,6 +28,35 @@
                 </div>
             </div>
         </nav>
+        <ul class="categoryMenu">
+            @*<style>
+                .dropdown {
+                    position: relative;
+                    display: inline-block;
+                }
+                .dropdown-content {
+                    display: none;
+                    position: absolute;
+                    background-color: #f9f9f9;
+                    min-width: 160px;
+                    box-shadow: 0px 8px 16px 0px rgb(0, 0, 1);
+                    padding: 12px 16px;
+                    z-index: 1;
+                }
+                .dropdown:hover .dropdown-content {
+                    display: block
+                }
+            </style>*@
+            <div class="dropdown">
+                <h2>Categories</h2>
+                <div class="dropdown-content">
+                    @foreach (var item in Models.Category.Catalog)
+                    {
+                        <li class="category"><a asp-area="" asp-page="/Categories/Index">@item</a></li>
+                    }
+                </div>
+            </div>
+        </ul>
     </header>
     <div class="container">
         <main role="main" class="pb-3">
@@ -37,7 +66,7 @@
 
     <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; 2020 - QA_ForumV2 - <a asp-area="" asp-page="/Privacy">Privacy</a>
+            &copy; 2020 - QA_Test_Json - <a asp-area="" asp-page="/Privacy">Privacy</a>
         </div>
     </footer>
 
