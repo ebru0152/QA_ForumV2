@@ -79,7 +79,7 @@ ul.categoryMenu {
     width: 200px;
     background-color: #f1f1f1;    
     height: auto;
-    position: fixed;
+    position: sticky;
     overflow: auto;
 }
 
