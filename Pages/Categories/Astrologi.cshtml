@@ -1,5 +1,5 @@
 ﻿@page 
-@model QA_ForumV2.Categories.IndexModel
+@model QA_ForumV2.Categories.AstrologiModel
 @{
 }
 @foreach (var item in Model.CategoryList)
@@ -9,6 +9,6 @@
     <p>@item.Description</p>
     foreach (var itemu in @item.GetAllComments())
     {
-        <p>@itemu</p>
+        <p>@itemu.Content</p>
     }
 }

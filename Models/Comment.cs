@@ -20,5 +20,10 @@ namespace QA_ForumV2.Models
         public Comment()
         {
         }
+
+        public override string ToString()
+        {
+            return Content;
+        }
     }
 }

@@ -36,7 +36,7 @@
                     <ul class="navbar-nav flex-grow-1">
                         @foreach (var item in Models.Category.Catalog)
                         {
-                            <li class="category"><a asp-area="" asp-page="Categories/Index" asp-route-id="@item">@item</a></li>
+                            <li class="category"><a asp-area="" asp-page="/Categories/@item">@item</a></li>
                         }
                     </ul>
                 </div>

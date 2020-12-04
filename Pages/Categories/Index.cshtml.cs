@@ -23,7 +23,7 @@ namespace QA_ForumV2.Categories
             CategoryList = new List<Question>();
             foreach (var item in repo.GetAllQuestions())
             {
-                //if(item.Category == category) CategoryList.Add(item);
+                if(item.Category == category) CategoryList.Add(item);
             }
         }
     }
