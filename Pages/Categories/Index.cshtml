@@ -7,7 +7,7 @@
     <p>posted @item.PostTime, tag: @item.Category</p>
     <h1>@item.Title</h1>
     <p>@item.Description</p>
-    @foreach (var itemu in @item.GetAllComments())
+    foreach (var itemu in @item.GetAllComments())
     {
         <p>@itemu</p>
     }

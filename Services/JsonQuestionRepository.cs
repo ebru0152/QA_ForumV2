@@ -5,17 +5,20 @@ using System.Threading.Tasks;
 using System.IO;
 using QA_ForumV2.Interfaces;
 using QA_ForumV2.Models;
+using Microsoft.Extensions.FileProviders;
+using Microsoft.AspNetCore.Hosting;
 
 namespace QA_ForumV2.Services
 {
     public class JsonQuestionRepository : IQuestionRepository
     {
-        //Jeffs jsonfile
-        string JsonFileName = @"C:\Users\Bruger\Source\Repos\QA_ForumV2\Data\JsonQuestions.json"; // needs fix
+        public IHostingEnvironment HostingEnvironment{ get;}
+        private string JsonFileName{get{ return Path.Combine( HostingEnvironment.WebRootPath, "Data", "JsonQuestions.Json"); } }
 
-        //Ebrus jsonfile
-        //string JsonFileName = @"C:\Users\ebrub\OneDrive\Dokumenter\GitHub\QA_Forum\QA_Test_Json\QA_Test_Json\Data\JsonQuestions.json";
-
+        public JsonQuestionRepository(IHostingEnvironment hostingEnvironment)
+        {
+            HostingEnvironment = hostingEnvironment;
+        }
 
         public void AddQuestion(Question q)
         {
