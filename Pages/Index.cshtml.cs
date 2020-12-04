@@ -35,7 +35,8 @@ namespace QA_ForumV2.Pages
 
         public IActionResult OnPost()
         {
-            if(SearchInput != "") return RedirectToPage("/Search/Index", new { SearchInput });
+            string search = SearchInput;
+            if(SearchInput != "") return RedirectToPage("Search/Index", new { search });
             Question = new Question(QuestionInput,QuestionDescription, CategoryInput); // gets error if exact title match with existing one
             repo.AddQuestion(Question);
             return RedirectToPage("/Questions/Index", new { Question.Title});

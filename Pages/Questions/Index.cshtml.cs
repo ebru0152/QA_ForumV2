@@ -34,11 +34,5 @@ namespace QA_ForumV2.Pages.Questions
         }
 
         public List<Comment> GetComments(){return CurrentQuestion.GetAllComments();}
-
-        public Question GetQQ(){return CurrentQuestion;}
-
-        public string GetQ() {return CurrentQuestion.Title;}
-        public string GetDescription(){return CurrentQuestion.Description;}
-        public string GetDate(){return CurrentQuestion.PostTime;}
     }
 }

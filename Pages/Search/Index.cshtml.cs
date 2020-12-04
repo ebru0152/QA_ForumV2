@@ -20,6 +20,7 @@ namespace QA_ForumV2.Pages.Search
         }
         public void OnGet(string search)
         {
+            SearchList = new List<Question>();
             SearchList = repo.FilterQuestionsByTitle(search);
         }
     }

@@ -9,21 +9,21 @@ using QA_ForumV2.Interfaces;
 
 namespace QA_ForumV2.Categories
 {
-    public class IndexModel : PageModel
+    public class ProgrammingModel : PageModel
     {
         [BindProperty]public IQuestionRepository repo{get;set;}
         [BindProperty]public List<Question> CategoryList{get;set;}
 
-        public IndexModel(IQuestionRepository rep)
+        public ProgrammingModel(IQuestionRepository rep)
         {
             repo = rep;
         }
-        public void OnGet(string category)
+        public void OnGet()
         {
             CategoryList = new List<Question>();
             foreach (var item in repo.GetAllQuestions())
             {
-                //if(item.Category == category) CategoryList.Add(item);
+                if(item.Category == "Programming") CategoryList.Add(item);
             }
         }
     }

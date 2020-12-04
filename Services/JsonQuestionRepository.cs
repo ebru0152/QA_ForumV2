@@ -12,10 +12,10 @@ namespace QA_ForumV2.Services
 {
     public class JsonQuestionRepository : IQuestionRepository
     {
-        public IHostingEnvironment HostingEnvironment{ get;}
+        public IWebHostEnvironment HostingEnvironment{ get;}
         private string JsonFileName{get{ return Path.Combine( HostingEnvironment.WebRootPath, "Data", "JsonQuestions.Json"); } }
 
-        public JsonQuestionRepository(IHostingEnvironment hostingEnvironment)
+        public JsonQuestionRepository(IWebHostEnvironment hostingEnvironment)
         {
             HostingEnvironment = hostingEnvironment;
         }
